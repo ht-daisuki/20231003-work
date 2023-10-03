@@ -1,7 +1,24 @@
 from math import ceil
 
 def calc_account(m):
-    # 実装は入れていません、自分で入れてください
+    if m <= 0:
+        return None
+
+    # 初乗り運賃
+    min_fare = 610
+
+    # 初乗り距離
+    min_distance = 1700
+
+    # 料金計算
+    if m <= min_distance:
+        return min_fare
+    else:
+        additional_distance = m - min_distance
+        additional_fare = (additional_distance // 315) * 80
+
+        # 初乗り運賃 + 増加料金
+        return min_fare + additional_fare
     pass
 
 if __name__ == "__main__":
